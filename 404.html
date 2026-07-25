@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found | Nithiya D</title>
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .error-page{ min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; }
+  .error-code{ font-family:var(--font-display); font-size:clamp(5rem,16vw,9rem); color:var(--gold-bright); line-height:1; }
+  .error-page h1{ margin:1rem 0 .8rem; font-size:1.6rem; }
+  .error-page p{ max-width:420px; margin-bottom:2rem; }
+  .error-seal{ margin-bottom:1.5rem; }
+</style>
+</head>
+<body>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="error-page">
+    <svg class="error-seal" viewBox="0 0 120 120" width="80" height="80">
+      <circle cx="60" cy="60" r="52" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.6"/>
+      <text x="60" y="72" text-anchor="middle" font-family="Fraunces, serif" font-size="34" fill="#F1D273">ND</text>
+    </svg>
+    <div class="error-code">404</div>
+    <h1>This page wandered off the map.</h1>
+    <p>The page you're looking for doesn't exist or has moved. Let's get you back to solid ground.</p>
+    <a href="index.html" class="btn btn-primary ripple">Back to Home</a>
+  </div>
+  <script>
+    document.querySelectorAll('.ripple').forEach(btn=>{
+      btn.addEventListener('click', function(e){
+        const rect=this.getBoundingClientRect();
+        const circle=document.createElement('span');
+        const size=Math.max(rect.width,rect.height);
+        circle.className='ripple-circle';
+        circle.style.width=circle.style.height=size+'px';
+        circle.style.left=(e.clientX-rect.left-size/2)+'px';
+        circle.style.top=(e.clientY-rect.top-size/2)+'px';
+        this.appendChild(circle);
+        setTimeout(()=>circle.remove(),650);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nithiya D | Full-Stack Developer &amp; Data Analyst</title>
+<meta name="description" content="Portfolio of Nithiya D — Full-Stack Developer, Software Engineer &amp; Data Analyst. B.Tech AI &amp; Data Science student building web, mobile and data-driven applications.">
+<meta name="keywords" content="Nithiya D, Full Stack Developer, Data Analyst, Data Scientist, Software Engineer, React Developer, Portfolio">
+<meta name="author" content="Nithiya D">
+<meta name="theme-color" content="#081B14">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Nithiya D | Full-Stack Developer & Data Analyst">
+<meta property="og:description" content="Building elegant, data-driven software — one project at a time.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/profile-placeholder.svg">
+
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <svg class="preloader-seal" viewBox="0 0 200 200" width="120" height="120">
+    <circle class="seal-ring-outer" cx="100" cy="100" r="88" fill="none" stroke="url(#preloadGold)" stroke-width="2"/>
+    <circle class="seal-ring-inner" cx="100" cy="100" r="70" fill="none" stroke="url(#preloadGold)" stroke-width="1"/>
+    <text x="100" y="118" text-anchor="middle" class="seal-letters">ND</text>
+    <defs>
+      <linearGradient id="preloadGold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#F1D273"/>
+        <stop offset="100%" stop-color="#D4AF37"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <p class="preloader-text">Preparing the presentation<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+</div>
+
+<!-- ============ SCROLL PROGRESS BAR ============ -->
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
+<!-- ============ AMBIENT BACKGROUND CANVAS ============ -->
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav-wrapper">
+  <nav class="nav glass" id="mainNav">
+    <a href="#home" class="nav-brand" aria-label="Nithiya D — home">
+      <svg viewBox="0 0 40 40" class="brand-crest"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.4"/><text x="20" y="27" text-anchor="middle" class="brand-crest-letter">N</text></svg>
+      <span>Nithiya D</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#journey" class="nav-link">Journey</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark theme" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19"><circle cx="12" cy="12" r="4.5"/><g stroke="currentColor" stroke-width="1.6"><line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.5" y2="6.5"/><line x1="17.5" y1="17.5" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.5" y2="17.5"/><line x1="17.5" y1="6.5" x2="19.6" y2="4.4"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+      <a href="#contact" class="btn btn-ghost nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#home" class="mobile-link">Home</a></li>
+    <li><a href="#about" class="mobile-link">About</a></li>
+    <li><a href="#education" class="mobile-link">Education</a></li>
+    <li><a href="#experience" class="mobile-link">Experience</a></li>
+    <li><a href="#skills" class="mobile-link">Skills</a></li>
+    <li><a href="#projects" class="mobile-link">Projects</a></li>
+    <li><a href="#achievements" class="mobile-link">Achievements</a></li>
+    <li><a href="#journey" class="mobile-link">Journey</a></li>
+    <li><a href="#contact" class="mobile-link">Contact</a></li>
+  </ul>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-inner container">
+    <div class="hero-copy" data-reveal>
+      <p class="eyebrow"><span class="eyebrow-line"></span>Full-Stack Developer &amp; Data Analyst</p>
+      <h1 class="hero-name">Nithiya&nbsp;D</h1>
+      <p class="hero-role">I build <span class="typing" id="typingText"></span><span class="type-cursor">|</span></p>
+      <p class="hero-desc">B.Tech Artificial Intelligence &amp; Data Science student crafting full-stack web &amp; mobile applications and turning raw data into decisions — with clean code and a keen eye for detail.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary ripple">View My Work</a>
+        <a href="assets/resume/Nithiya_D_Resume.pdf" download class="btn btn-outline ripple">Download Resume</a>
+        <a href="#contact" class="btn btn-text">Contact Me →</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/Nithiya17006" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5 3.3 9.3 7.8 10.8.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+        <a href="https://linkedin.com/in/nithiya-deva" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM.5 8.98h4v14.02h-4V8.98Zm7.5 0h3.83v1.92h.05c.53-1 1.85-2.06 3.8-2.06 4.07 0 4.82 2.68 4.82 6.16v8h-4v-7.1c0-1.7-.03-3.87-2.36-3.87-2.37 0-2.73 1.85-2.73 3.75v7.22h-4V8.98Z"/></svg></a>
+        <a href="https://leetcode.com/u/Nithiya-deva/" target="_blank" rel="noopener" aria-label="LeetCode" class="social-icon"><svg viewBox="0 0 24 24"><path d="M13.5 1.5 6 9l3 3-3 3 7.5 7.5 2.1-2.1L10.2 15l3.3-3.3-3.3-3.3 5.4-5.4-2.1-2.1ZM17 19a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg></a>
+        <a href="https://www.hackerrank.com/profile/727623BAD018" target="_blank" rel="noopener" aria-label="HackerRank" class="social-icon"><svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 1 0 23.5 12 11.5 11.5 0 0 0 12 .5Zm5 15c-.1.2-3.2 1.4-3.2 1.4v-3.2h-3.6v3.2s-3.1-1.2-3.2-1.4c-.1-.2-.1-6.9 0-7.1.1-.2 3.2-1.4 3.2-1.4v3.2h3.6V7s3.1 1.2 3.2 1.4c.1.2.1 6.9 0 7.1Z"/></svg></a>
+        <a href="https://instagram.com/_.nithi_17" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 2 .25 2.5.44a5 5 0 0 1 1.8 1.17 5 5 0 0 1 1.18 1.8c.19.5.38 1.3.44 2.5.06 1.2.07 1.6.07 4.8s0 3.6-.07 4.8c-.06 1.2-.25 2-.44 2.5a5.1 5.1 0 0 1-1.18 1.8 5 5 0 0 1-1.8 1.18c-.5.19-1.3.38-2.5.44-1.2.06-1.6.07-4.8.07s-3.6 0-4.8-.07c-1.2-.06-2-.25-2.5-.44a5 5 0 0 1-1.8-1.18 5 5 0 0 1-1.18-1.8c-.19-.5-.38-1.3-.44-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.8c.06-1.2.25-2 .44-2.5a5 5 0 0 1 1.18-1.8A5 5 0 0 1 5.7 1.7c.5-.19 1.3-.38 2.5-.44C9.4 2.2 9.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.53 0-4.77.07-1 .05-1.5.2-1.86.34-.47.18-.8.4-1.15.75s-.57.68-.75 1.15c-.14.36-.3.87-.34 1.86C3.06 9.4 3.06 9.78 3.06 12s0 2.6.07 3.83c.05 1 .2 1.5.34 1.86.18.47.4.8.75 1.15s.68.57 1.15.75c.36.14.87.3 1.86.34 1.24.07 1.62.07 4.77.07s3.53 0 4.77-.07c1-.05 1.5-.2 1.86-.34.47-.18.8-.4 1.15-.75s.57-.68.75-1.15c.14-.36.3-.87.34-1.86.07-1.24.07-1.62.07-3.83s0-2.6-.07-3.83c-.05-1-.2-1.5-.34-1.86a3.2 3.2 0 0 0-.75-1.15 3.2 3.2 0 0 0-1.15-.75c-.36-.14-.87-.3-1.86-.34C15.53 4 15.15 4 12 4Zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm4.7-2a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-reveal>
+      <div class="crest-frame" id="crestFrame">
+        <svg class="crest-ornament" viewBox="0 0 400 400" aria-hidden="true">
+          <circle cx="200" cy="200" r="188" class="ring ring-slow"/>
+          <circle cx="200" cy="200" r="168" class="ring ring-fast" stroke-dasharray="2 10"/>
+          <g class="crest-ticks">
+            <!-- tick marks generated for a regal dial feel -->
+          </g>
+        </svg>
+        <div class="crest-shine"></div>
+        <img src="assets/images/profile.jpeg" alt="Nithiya D portrait" class="crest-photo" id="crestPhoto">
+        <span class="crest-badge" title="B.Tech AI & Data Science, 2027">Class of 2027</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>The Person Behind The Code</p>
+    <h2 class="section-title" data-reveal>About Me</h2>
+
+    <div class="about-grid">
+      <div class="about-text" data-reveal>
+        <p>I'm a final-year B.Tech student in Artificial Intelligence &amp; Data Science at Dr. Mahalingam College of Engineering and Technology, Pollachi, with a strong foundation in Java, Python, Object-Oriented Programming and Data Structures &amp; Algorithms.</p>
+        <p>I enjoy working across the stack — building full-stack web apps with React and Node.js, cross-platform mobile apps with Flutter and React Native, and uncovering patterns in data with Pandas, Scikit-learn and Power BI. What ties it together is the same instinct: take a messy real-world problem and turn it into something clean, usable and reliable.</p>
+        <div class="about-values">
+          <div class="value-chip">Problem Solving</div>
+          <div class="value-chip">Clean Architecture</div>
+          <div class="value-chip">Continuous Learning</div>
+          <div class="value-chip">Team Collaboration</div>
+        </div>
+        <div class="about-interests">
+          <h3>Beyond the screen</h3>
+          <p>NSS Volunteer (2024–Present) and Youth Red Cross Member (2023–2024) — I care about community-driven work as much as code. Fluent in Tamil (native) and English (professional).</p>
+        </div>
+      </div>
+
+      <div class="about-stats" data-reveal>
+        <div class="stat-card glass">
+          <span class="stat-number" data-count="8.7" data-decimal="true">0</span>
+          <span class="stat-label">CGPA / 10</span>
+        </div>
+        <div class="stat-card glass">
+          <span class="stat-number" data-count="5">0</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-card glass">
+          <span class="stat-number" data-count="110" data-suffix="+">0</span>
+          <span class="stat-label">DSA Problems Solved</span>
+        </div>
+        <div class="stat-card glass">
+          <span class="stat-number" data-count="1">0</span>
+          <span class="stat-label">Internship Completed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section section-alt" id="education">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Academic Record</p>
+    <h2 class="section-title" data-reveal>Education</h2>
+
+    <div class="edu-list">
+      <div class="edu-card glass" data-reveal>
+        <div class="edu-mark"></div>
+        <div class="edu-body">
+          <span class="edu-years">2023 — 2027</span>
+          <h3>B.Tech, Artificial Intelligence &amp; Data Science</h3>
+          <p class="edu-place">Dr. Mahalingam College of Engineering and Technology, Pollachi</p>
+          <p class="edu-detail">CGPA: 8.7 / 10 <em>(till 5th semester)</em></p>
+        </div>
+      </div>
+      <div class="edu-card glass" data-reveal>
+        <div class="edu-mark"></div>
+        <div class="edu-body">
+          <span class="edu-years">2022 — 2023</span>
+          <h3>Higher Secondary Certificate (HSC)</h3>
+          <p class="edu-place">Govt. Girls Hr. Sec. School, Periyakulam</p>
+          <p class="edu-detail">81%</p>
+        </div>
+      </div>
+      <div class="edu-card glass" data-reveal>
+        <div class="edu-mark"></div>
+        <div class="edu-body">
+          <span class="edu-years">2020 — 2021</span>
+          <h3>SSLC</h3>
+          <p class="edu-place">Govt. Girls Hr. Sec. School, Periyakulam</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE / INTERNSHIP ============ -->
+<section class="section" id="experience">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Hands-On Experience</p>
+    <h2 class="section-title" data-reveal>Internship Experience</h2>
+
+    <div class="exp-card glass" data-reveal>
+      <div class="exp-head">
+        <div>
+          <h3>Software &amp; Data Analytics Intern</h3>
+          <p class="exp-org">Accent Techno Soft (ATS), Coimbatore, Tamil Nadu</p>
+        </div>
+        <span class="exp-date">2025</span>
+      </div>
+      <ul class="exp-points">
+        <li>Developed Python applications using Pandas, NumPy and Scikit-learn to preprocess, clean and analyse 4 real-world datasets comprising 5,000+ records.</li>
+        <li>Performed Exploratory Data Analysis (EDA) and generated automated analytical reports and visualisations that improved data quality and surfaced key trends.</li>
+        <li>Collaborated with mentors in an Agile-style development environment, contributing to debugging, testing and code optimisation.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">EDA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section section-alt" id="skills">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Toolbox</p>
+    <h2 class="section-title" data-reveal>Technical Skills</h2>
+
+    <div class="skills-tabs" id="skillsTabs" data-reveal>
+      <button class="skills-tab active" data-cat="all">All</button>
+      <button class="skills-tab" data-cat="languages">Languages</button>
+      <button class="skills-tab" data-cat="frontend">Frontend</button>
+      <button class="skills-tab" data-cat="backend">Backend</button>
+      <button class="skills-tab" data-cat="database">Databases</button>
+      <button class="skills-tab" data-cat="data">Data &amp; AI</button>
+      <button class="skills-tab" data-cat="tools">Tools &amp; Cloud</button>
+      <button class="skills-tab" data-cat="soft">Soft Skills</button>
+    </div>
+
+    <div class="skills-grid" id="skillsGrid">
+      <!-- Populated by script.js from SKILLS data, also present statically for no-js/SEO -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Selected Work</p>
+    <h2 class="section-title" data-reveal>Projects</h2>
+
+    <div class="projects-controls" data-reveal>
+      <div class="project-filters" id="projectFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="ai">AI / Data</button>
+      </div>
+      <div class="project-search">
+        <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.5" y2="16.5" stroke="currentColor" stroke-width="2"/></svg>
+        <input type="text" id="projectSearch" placeholder="Search projects or tech...">
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ACHIEVEMENTS & CERTIFICATIONS ============ -->
+<section class="section section-alt" id="achievements">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Recognition</p>
+    <h2 class="section-title" data-reveal>Achievements &amp; Certifications</h2>
+
+    <div class="cert-grid">
+      <div class="cert-card glass" data-reveal>
+        <div class="cert-icon">🏅</div>
+        <h3>AWS Cloud Foundations</h3>
+        <p>2026</p>
+      </div>
+      <div class="cert-card glass" data-reveal>
+        <div class="cert-icon">📊</div>
+        <h3>Introduction to Data Science</h3>
+        <p>Infosys Springboard · 2026</p>
+      </div>
+      <div class="cert-card glass" data-reveal>
+        <div class="cert-icon">🐍</div>
+        <h3>Python Libraries for Data Science</h3>
+        <p>2025</p>
+      </div>
+      <div class="cert-card glass" data-reveal>
+        <div class="cert-icon">🧩</div>
+        <h3>110+ DSA Problems Solved</h3>
+        <p>LeetCode · 2025</p>
+      </div>
+      <div class="cert-card glass" data-reveal>
+        <div class="cert-icon">⭐</div>
+        <h3>5★ Java · 3★ Python</h3>
+        <p>HackerRank · 2025</p>
+      </div>
+      <div class="cert-card glass" data-reveal>
+        <div class="cert-icon">🏆</div>
+        <h3>Finalist, Algorithm Round</h3>
+        <p>Let's Code · 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CODING PROFILES ============ -->
+<section class="section" id="coding-profiles">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Where I Practice</p>
+    <h2 class="section-title" data-reveal>Coding Profiles</h2>
+
+    <div class="profiles-grid">
+      <a href="https://github.com/Nithiya17006" target="_blank" rel="noopener" class="profile-card glass" data-reveal>
+        <svg viewBox="0 0 24 24" class="profile-card-icon"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5 3.3 9.3 7.8 10.8.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>
+        <h3>GitHub</h3>
+        <p>github.com/Nithiya17006</p>
+        <span class="profile-cta">View Repositories →</span>
+      </a>
+      <a href="https://leetcode.com/u/Nithiya-deva/" target="_blank" rel="noopener" class="profile-card glass" data-reveal>
+        <svg viewBox="0 0 24 24" class="profile-card-icon"><path d="M13.5 1.5 6 9l3 3-3 3 7.5 7.5 2.1-2.1L10.2 15l3.3-3.3-3.3-3.3 5.4-5.4-2.1-2.1ZM17 19a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg>
+        <h3>LeetCode</h3>
+        <p>110+ problems solved</p>
+        <span class="profile-cta">View Profile →</span>
+      </a>
+      <a href="https://www.hackerrank.com/profile/727623BAD018" target="_blank" rel="noopener" class="profile-card glass" data-reveal>
+        <svg viewBox="0 0 24 24" class="profile-card-icon"><path d="M12 .5A11.5 11.5 0 1 0 23.5 12 11.5 11.5 0 0 0 12 .5Zm5 15c-.1.2-3.2 1.4-3.2 1.4v-3.2h-3.6v3.2s-3.1-1.2-3.2-1.4c-.1-.2-.1-6.9 0-7.1.1-.2 3.2-1.4 3.2-1.4v3.2h3.6V7s3.1 1.2 3.2 1.4c.1.2.1 6.9 0 7.1Z"/></svg>
+        <h3>HackerRank</h3>
+        <p>5★ Java · 3★ Python</p>
+        <span class="profile-cta">View Profile →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH STACK MARQUEE ============ -->
+<section class="marquee-section" aria-label="Technologies I work with">
+  <div class="marquee" id="techMarquee">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>How I Can Help</p>
+    <h2 class="section-title" data-reveal>Services</h2>
+
+    <div class="services-grid">
+      <div class="service-card glass" data-reveal>
+        <div class="service-icon">🖥️</div>
+        <h3>Full-Stack Web Development</h3>
+        <p>End-to-end web apps with React, Node.js, Express and MySQL — from database design to a polished, responsive UI.</p>
+      </div>
+      <div class="service-card glass" data-reveal>
+        <div class="service-icon">📱</div>
+        <h3>Cross-Platform Mobile Apps</h3>
+        <p>Native-feeling mobile experiences built with Flutter and React Native, backed by Firebase or REST APIs.</p>
+      </div>
+      <div class="service-card glass" data-reveal>
+        <div class="service-icon">📈</div>
+        <h3>Data Analysis &amp; Visualization</h3>
+        <p>Cleaning, analysing and visualising data with Pandas, Scikit-learn and Power BI to surface insight that's actually usable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY TIMELINE ============ -->
+<section class="section" id="journey">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Chronicle</p>
+    <h2 class="section-title" data-reveal>My Journey</h2>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-seal">2021</div>
+        <div class="timeline-content glass"><h3>Completed SSLC</h3><p>Govt. Girls Hr. Sec. School, Periyakulam</p></div>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-seal">2023</div>
+        <div class="timeline-content glass"><h3>Completed HSC — 81%</h3><p>Began B.Tech in AI &amp; Data Science at Dr. Mahalingam College of Engineering and Technology</p></div>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-seal">2025</div>
+        <div class="timeline-content glass"><h3>Software &amp; Data Analytics Internship</h3><p>Accent Techno Soft (ATS), Coimbatore — plus EduBot, AI Inner Voice &amp; Money Diary projects</p></div>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-seal">2026</div>
+        <div class="timeline-content glass"><h3>AWS Certified · Shipped Smart Task Tracker &amp; Life Auto-Pilot</h3><p>Deepened full-stack &amp; cloud fundamentals</p></div>
+      </div>
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-seal">2027</div>
+        <div class="timeline-content glass"><h3>Graduating &amp; Entering Industry</h3><p>Seeking a full-stack developer or data analyst role — this is where you come in.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS (placeholders) ============ -->
+<section class="section section-alt" id="testimonials">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Kind Words <span class="placeholder-flag">— placeholder, replace with real quotes</span></p>
+    <h2 class="section-title" data-reveal>Testimonials</h2>
+
+    <div class="testimonials-track" id="testimonialsTrack">
+      <div class="testimonial-card glass" data-reveal>
+        <p>"Working with Nithiya has always been a great experience. She is hardworking, learns quickly, and completes tasks efficiently while staying calm under pressure. Her positive attitude and willingness to help make her a reliable teammate."</p>
+        <span class="testimonial-author">— Project Teammate</span>
+      </div>
+      <div class="testimonial-card glass" data-reveal>
+        <p>"Nithiya is a sincere, disciplined, and dedicated student. She approaches every project with responsibility, maintains a calm and professional attitude, and consistently delivers quality work. Her commitment to learning and continuous improvement stands out."</p>
+        <span class="testimonial-author">— Internship Mentor</span>
+      </div>
+      <div class="testimonial-card glass" data-reveal>
+        <p>"Nithiya is highly dedicated and goal-oriented. Once she commits to a task, she puts in the effort needed to achieve it. She collaborates well with others, remains focused under pressure, and consistently strives to deliver her best work."</p>
+        <span class="testimonial-author">— Project Collaborator</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Let's Talk</p>
+    <h2 class="section-title" data-reveal>Get In Touch</h2>
+    <p class="section-sub" data-reveal>Open to full-stack developer, software engineer and data analyst opportunities, internships and freelance projects.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info" data-reveal>
+        <a href="mailto:nithi17006@gmail.com" class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <div><span class="contact-label">Email</span><span class="contact-value">nithi17006@gmail.com</span></div>
+        </a>
+        <a href="tel:+917092034401" class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div><span class="contact-label">Phone</span><span class="contact-value">+91 70920 34401</span></div>
+        </a>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div><span class="contact-label">Location</span><span class="contact-value">Pollachi / Coimbatore, Tamil Nadu, India</span></div>
+        </div>
+        <div class="contact-map-placeholder">
+          <div class="map-pin">📍</div>
+          <span>Tamil Nadu, India</span>
+          <small>Interactive map placeholder — swap for Google Maps embed</small>
+        </div>
+      </div>
+
+      <form class="contact-form glass" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="from_name" required minlength="2" placeholder="Your full name">
+          <span class="form-error" data-error-for="cf-name"></span>
+        </div>
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="from_email" required placeholder="you@example.com">
+          <span class="form-error" data-error-for="cf-email"></span>
+        </div>
+        <div class="form-row">
+          <label for="cf-subject">Subject</label>
+          <input type="text" id="cf-subject" name="subject" required minlength="3" placeholder="What's this about?">
+          <span class="form-error" data-error-for="cf-subject"></span>
+        </div>
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" required minlength="10" rows="5" placeholder="Tell me a bit more..."></textarea>
+          <span class="form-error" data-error-for="cf-message"></span>
+        </div>
+        <button type="submit" class="btn btn-primary ripple full-width">Send Message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <svg viewBox="0 0 40 40" class="brand-crest"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.4"/><text x="20" y="27" text-anchor="middle" class="brand-crest-letter">N</text></svg>
+      <p>Nithiya D — building thoughtful software, one commit at a time.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-social">
+      <h4>Connect</h4>
+      <div class="hero-socials">
+        <a href="https://github.com/Nithiya17006" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5 3.3 9.3 7.8 10.8.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+        <a href="https://linkedin.com/in/nithiya-deva" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM.5 8.98h4v14.02h-4V8.98Zm7.5 0h3.83v1.92h.05c.53-1 1.85-2.06 3.8-2.06 4.07 0 4.82 2.68 4.82 6.16v8h-4v-7.1c0-1.7-.03-3.87-2.36-3.87-2.37 0-2.73 1.85-2.73 3.75v7.22h-4V8.98Z"/></svg></a>
+        <a href="https://instagram.com/_.nithi_17" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 2 .25 2.5.44a5 5 0 0 1 1.8 1.17 5 5 0 0 1 1.18 1.8c.19.5.38 1.3.44 2.5.06 1.2.07 1.6.07 4.8s0 3.6-.07 4.8c-.06 1.2-.25 2-.44 2.5a5.1 5.1 0 0 1-1.18 1.8 5 5 0 0 1-1.8 1.18c-.5.19-1.3.38-2.5.44-1.2.06-1.6.07-4.8.07s-3.6 0-4.8-.07c-1.2-.06-2-.25-2.5-.44a5 5 0 0 1-1.8-1.18 5 5 0 0 1-1.18-1.8c-.19-.5-.38-1.3-.44-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.8c.06-1.2.25-2 .44-2.5a5 5 0 0 1 1.18-1.8A5 5 0 0 1 5.7 1.7c.5-.19 1.3-.38 2.5-.44C9.4 2.2 9.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.53 0-4.77.07-1 .05-1.5.2-1.86.34-.47.18-.8.4-1.15.75s-.57.68-.75 1.15c-.14.36-.3.87-.34 1.86C3.06 9.4 3.06 9.78 3.06 12s0 2.6.07 3.83c.05 1 .2 1.5.34 1.86.18.47.4.8.75 1.15s.68.57 1.15.75c.36.14.87.3 1.86.34 1.24.07 1.62.07 4.77.07s3.53 0 4.77-.07c1-.05 1.5-.2 1.86-.34.47-.18.8-.4 1.15-.75s.57-.68.75-1.15c.14-.36.3-.87.34-1.86.07-1.24.07-1.62.07-3.83s0-2.6-.07-3.83c-.05-1-.2-1.5-.34-1.86a3.2 3.2 0 0 0-.75-1.15 3.2 3.2 0 0 0-1.15-.75c-.36-.14-.87-.3-1.86-.34C15.53 4 15.15 4 12 4Zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm4.7-2a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© <span id="currentYear"></span> Nithiya D. All rights reserved.</p>
+    <p class="footer-made">Designed &amp; built with care.</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING ACTION MENU ============ -->
+<div class="fab-wrapper" id="fabWrapper">
+  <div class="fab-menu" id="fabMenu">
+    <a href="#contact" class="fab-item" title="Contact">✉️</a>
+    <a href="assets/resume/Nithiya_D_Resume.pdf" download class="fab-item" title="Resume">📄</a>
+    <a href="#top" class="fab-item" title="Top">↑</a>
+  </div>
+  <button class="fab-toggle" id="fabToggle" aria-label="Quick actions">+</button>
+</div>
+
+<!-- ============ SCROLL TO TOP ============ -->
+<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
