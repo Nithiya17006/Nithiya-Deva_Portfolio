@@ -103,6 +103,15 @@ document.addEventListener('DOMContentLoaded', () => {
       github:'https://github.com/Nithiya17006/Pet-adoption',
       demo:'#'
     },
+     {
+      title:'Graph-Aware Fraud & Duplicate Transaction Detection',
+      year:'2026',
+      cat:'ml',
+      desc:'An AI-powered fraud detection system that combines machine learning with transaction graph analysis to identify suspicious and duplicate transactions, generate risk scores, and prioritize cases for investigation.',
+      tech:['Python','Pandas','Scikit-learn','LightGBM','NetworkX','Streamlit'],
+      image:'assets/images/project-fraud-detection.png',
+      github:'https://github.com/Nithiya17006/graph-aware-fraud-detection'
+    },
   ];
 
   const TECH_MARQUEE = ['Java','Python','JavaScript','React.js','Node.js','Flutter','React Native','MySQL','Firebase','Pandas','Scikit-learn','Power BI','AWS','Git'];
