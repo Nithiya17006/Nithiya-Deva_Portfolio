@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cat:'ml',
       desc:'An AI-powered fraud detection system that combines machine learning with transaction graph analysis to identify suspicious and duplicate transactions, generate risk scores, and prioritize cases for investigation.',
       tech:['Python','Pandas','Scikit-learn','LightGBM','NetworkX','Streamlit'],
-      image:'assets/images/project-fraud-detection.png',
+      image:'assets/images/project-fraud-detection',
       github:'https://github.com/Nithiya17006/graph-aware-fraud-detection'
     },
   ];
